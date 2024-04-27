@@ -1,4 +1,4 @@
-package com.hcl.protfolio;
+package com.hcl.protfolio.kafka;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
