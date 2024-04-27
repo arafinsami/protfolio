@@ -33,4 +33,6 @@ public class Position {
     private String instrument;
 
     private String portfolio;
+
+    private String customerId;
 }
