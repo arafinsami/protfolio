@@ -3,7 +3,7 @@
 
 2. To create a topic: kafka-topics.sh --bootstrap-server localhost:9092 --create --topic t_hello --partitions 1 --replication-factor 1
 
-3lets delete topic t_test: kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic t_test
+3. lets delete topic t_test: kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic t_test
 
 4. To see the specific partition of a topic: kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic t_multi_partitions --offset earliest --partition 0
 

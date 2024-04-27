@@ -28,9 +28,9 @@ public class PortfolioService {
     public Portfolio save(PortfolioDTO request) {
         Portfolio portfolio = portfolioMapper.save(request);
         accountRepository.save(portfolio);
-        auditDataService.publishActivity(
+        /*auditDataService.publishActivity(
                 //save audit data
-        );
+        );*/
         return portfolio;
     }
 

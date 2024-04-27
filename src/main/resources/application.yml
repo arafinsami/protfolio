@@ -2,25 +2,20 @@ spring:
   application:
     name: portfolio-management
   kafka:
-    producer:
-      bootstrap-servers:
-        - localhost:9092
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    bootstrap-servers: localhost:9092
     consumer:
-      bootstrap-servers:
-        - localhost:9092
+      group-id: Event_HCL_Portfolio_Management
       auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      group-id: Event_ContactRegistrationIDP
       properties:
-        spring.json.trusted.packages: "*"
-        allow.auto.create.topics: false
-    topic:
-      entity:
-        name: portfolio_managemebt
-        auto-create: false
-    maxpoll: 1
-    autocommit: false
+        spring:
+          json:
+            trusted:
+              packages: '*'
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
