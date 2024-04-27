@@ -4,6 +4,7 @@ package com.hcl.protfolio.service;
 
 import com.hcl.protfolio.controller.AuditController;
 import com.hcl.protfolio.entity.Audit;
+import com.hcl.protfolio.message.AuditMessage;
 import com.hcl.protfolio.repository.AuditRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,18 @@ public class AuditDataService {
 	@Autowired
     private AuditRepository auditRepository;
 
+    @Transactional
+    public void publishActivity(AuditMessage auditMessage) {
+        Audit audit = new Audit();
+        audit.setTransactionRef(auditMessage.getTransactionRef());
+        audit.setInstrumentId(auditMessage.getInstrumentId());
+        audit.setInstrumentName(auditMessage.getInstrumentName());
+        audit.setTradeType(auditMessage.getTradeType());
+        audit.setAuditDate(auditMessage.getAuditDate());
+        audit.setAuditDate(new Date());
+        audit.setCustomerId(auditMessage.getCustomerId());
+        auditRepository.save(audit);
+    }
 	/*
 	 * @Transactional public void publishActivity() { Audit auditData = new Audit();
 	 * auditData.setAuditDate(new Date()); auditRepository.save(auditData); }
