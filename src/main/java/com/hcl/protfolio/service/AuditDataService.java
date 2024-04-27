@@ -25,6 +25,7 @@ public class AuditDataService {
         audit.setTradeType(auditMessage.getTradeType());
         audit.setAuditDate(auditMessage.getAuditDate());
         audit.setAuditDate(new Date());
+        audit.setCustomerId(auditMessage.getCustomerId());
         auditRepository.save(audit);
     }
 }

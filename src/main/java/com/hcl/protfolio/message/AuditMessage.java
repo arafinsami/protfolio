@@ -10,8 +10,14 @@ import java.util.Date;
 @ToString
 public class AuditMessage {
     private String transactionRef;
+
     private Long instrumentId;
+
     private String instrumentName;
+
     private TradeType tradeType;
+
     private Date auditDate;
+
+    private String customerId;
 }

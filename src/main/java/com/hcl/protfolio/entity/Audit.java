@@ -18,7 +18,7 @@ public class Audit {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(updatable = false, nullable = false)
-    private String auditId; // Primary Key
+    private String auditId;
 
     private String transactionRef;
 
@@ -31,4 +31,6 @@ public class Audit {
 
     @Temporal(TemporalType.DATE)
     private Date auditDate;
+
+    private String customerId;
 }

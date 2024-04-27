@@ -30,11 +30,7 @@ public class Position {
 
     private String transactionRef;
 
-    @ManyToOne
-    @JoinColumn(name = "instrument_Id")
-    private Instrument instrument;
+    private String instrument;
 
-    @ManyToOne
-    @JoinColumn(name = "customerId_Id")
-    private Portfolio portfolio;
+    private String portfolio;
 }
