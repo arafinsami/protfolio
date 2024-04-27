@@ -22,7 +22,7 @@ public class Audit {
 
     private String transactionRef;
 
-    private Long instrumentId;
+    private String instrumentId;
 
     private String instrumentName;
 
